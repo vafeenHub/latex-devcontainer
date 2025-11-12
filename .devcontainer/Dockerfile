@@ -10,8 +10,9 @@ RUN apt-get update && \
     procps \
     sudo \
     tzdata \
-    vim \
-    rm -rf /var/lib/apt/lists/*
+    vim
+
+RUN rm -rf /var/lib/apt/lists/*
 
 
 WORKDIR /root
