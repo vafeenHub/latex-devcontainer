@@ -48,8 +48,8 @@
           "*.fdb_latexmk"
         ],
         "latex-workshop.formatting.latex": "latexindent",
-        "latex-workshop.latex.autoBuild.run": "never", // never - никогда не собирать автоматически, onFileCnange - при изменении файла, onSave - при сохранении
-        "editor.formatOnSave": false,
+        "latex-workshop.latex.autoBuild.run": "onFileChange",
+        "editor.formatOnSave": true,
         "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true
       }
