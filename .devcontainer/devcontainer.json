@@ -1,13 +1,58 @@
 {
-  "name": "Ubuntu Dev Container",
+  "name": "LaTeX Dev Container",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
   "runArgs": ["--name", "${localWorkspaceFolderBasename}"],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/${localWorkspaceFolderBasename}",
+  "remoteUser": "root",
   "customizations": {
     "vscode": {
-      "extensions": []
+      "extensions": [
+        "james-yu.latex-workshop",
+        "ms-vscode.text-transform",
+        "yzane.markdown-pdf"
+      ],
+      "settings": {
+        "latex-workshop.latex.tools": [
+          {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "%DOC%"
+            ]
+          }
+        ],
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "xelatex",
+            "tools": ["xelatex"]
+          }
+        ],
+        "latex-workshop.latex.clean.fileTypes": [
+          "*.aux",
+          "*.bbl",
+          "*.blg",
+          "*.idx",
+          "*.log",
+          "*.out",
+          "*.toc",
+          "*.lof",
+          "*.lot",
+          "*.fls",
+          "*.fdb_latexmk"
+        ],
+        "latex-workshop.formatting.latex": "latexindent",
+        "latex-workshop.latex.autoBuild.run": "never", // never - никогда не собирать автоматически, onFileCnange - при изменении файла, onSave - при сохранении
+        "editor.formatOnSave": false,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true
+      }
     }
-  },
-  "remoteUser": "root"
+  }
 }

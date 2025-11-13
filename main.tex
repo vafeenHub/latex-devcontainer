@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+
+% Поддержка Unicode и шрифтов
+\usepackage{fontspec}
+\usepackage{polyglossia}
+
+% Язык документа
+\setmainlanguage{russian}
+
+% Основной шрифт (с поддержкой кириллицы)
+\setmainfont{DejaVu Serif}
+
+% Моноширинный шрифт для кириллицы в \texttt{}
+\newfontfamily{\cyrillicfonttt}{DejaVu Sans Mono}
+
+% Метаданные
+\title{Пример документа с кириллицей}
+\author{Студент}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Введение}
+
+Этот документ демонстрирует работу \LaTeX{} с кириллическими символами.
+Здесь используются:
+\begin{itemize}
+	\item Шрифт \texttt{DejaVu Serif},
+	\item Движок \texttt{xelatex},
+	\item Пакеты \texttt{fontspec} и \texttt{polyglossia}.
+\end{itemize}
+\section{Заключение}
+
+Всё работает корректно: буквы «абвгдеёжзийклмнопрстуфхцчшщъыьэюя» отображаются без ошибок.
+
+Поддержка переносов включена благодаря пакету \texttt{texlive-lang-cyrillic}.
+
+\end{document}
