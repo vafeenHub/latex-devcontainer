@@ -12,6 +12,4 @@ clean:
 	rm -f *.aux *.log *.out *.toc *.lof *.lot *.fls *.fdb_latexmk *.pdf indent.log *.bak*
 
 
-clean-all: clean
-
-.PHONY: all format clean clean-all
+.PHONY: all format clean
