@@ -3,9 +3,9 @@
 [Instruction](https://gist.github.com/vafeen/f2cd631d97782645d0e89d0eb1c9df4b)
 
 Usage:
-`make`
-`make format` //format main.tex
-`make clean`
+- `make`
+- `make format` //format main.tex
+- `make clean`
 
 You can also configure `.devcontainer/devcontainer.json`:
 
